@@ -5,6 +5,9 @@
     list-style: none;
     text-decoration: none;
 }
+:root{
+    --boxShadowColor: red;
+}
 body{
     font-family: sans-serif;
 }
@@ -24,6 +27,8 @@ h1{
     display: none;
 }
 .fivestarsContainer label {
+    font-size: 30px;
+    color: rgb(255, 250, 240);
     width: 100px;
     height: 100px;
     display: flex;
@@ -39,11 +44,40 @@ input:checked ~ label,
 input:hover ~ label
 {
     background-color: yellow;
+    color: rgb(0, 0, 0);
 }
 
 input#fiveStars1:checked ~ label,
 input#fiveStars1:hover ~ label{
     background-color: red;
+    color: yellow;
     transform: rotate(360deg);
+ animation: fire 5s linear infinite;
+}
+
+@keyframes fire {
+    0%{
+        box-shadow: 0 0 50px var(--boxShadowColor); 
  
+    }
+    20%{
+        box-shadow: 0 0 70px var(--boxShadowColor);
+     
+    }
+    40%{
+        box-shadow: 0 0 30px var(--boxShadowColor);
+    
+    }
+    60%{
+        box-shadow: 0 0 80px var(--boxShadowColor);
+         
+    }
+    80%{
+        box-shadow: 0 0 120px var(--boxShadowColor);
+         
+    }
+    100%{
+        box-shadow: 0 0 40px var(--boxShadowColor);
+         
+    }
 }
